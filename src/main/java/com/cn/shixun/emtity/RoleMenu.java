@@ -1,6 +1,13 @@
 package com.cn.shixun.emtity;
 
 public class RoleMenu {
+    public RoleMenu(){};
+
+    public RoleMenu(Integer roleId, Integer menuId ){
+        this.roleId = roleId;
+        this.menuId = menuId;
+    };
+
     private Integer roleId;
 
     private Integer menuId;

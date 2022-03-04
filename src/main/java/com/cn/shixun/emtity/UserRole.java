@@ -1,16 +1,16 @@
 package com.cn.shixun.emtity;
 
 public class UserRole {
-    private Integer userId;
+    private Integer useId;
 
     private Integer roleId;
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getUseId() {
+        return useId;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setUseId(Integer useId) {
+        this.useId = useId;
     }
 
     public Integer getRoleId() {

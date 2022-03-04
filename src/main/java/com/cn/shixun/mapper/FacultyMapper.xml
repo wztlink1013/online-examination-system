@@ -55,4 +55,7 @@
     set faculty_name = #{facultyName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="loadFaculty" resultMap="BaseResultMap">
+    SELECT id,faculty_name FROM faculty
+  </select>
 </mapper>

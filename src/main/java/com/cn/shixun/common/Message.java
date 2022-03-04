@@ -1,13 +1,18 @@
 package com.cn.shixun.common;
 
 public class Message {
-    public Message(String code, String msg) {
+
+    public  Message(String code, String msg){
         this.code = code;
         this.msg = msg;
     }
+    private String code;  /*返回的编码*/
+    private String msg;  /*返回的消息*/
 
-    private String code;
-    private String msg;
+    public  void setInfo(String code,String msg){
+        this.code = code;
+        this.msg = msg;
+    }
 
     public String getCode() {
         return code;

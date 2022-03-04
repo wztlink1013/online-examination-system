@@ -3,6 +3,9 @@ package com.cn.shixun.mapper;
 import com.cn.shixun.emtity.User;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
+
 @Mapper
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
@@ -18,4 +21,6 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     User login(User user);
+
+    List<User> loadFacultyMajorClass();
 }

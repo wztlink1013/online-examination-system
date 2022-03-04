@@ -15,6 +15,8 @@ public class Menu {
 
     private Integer sort;
 
+    private String parentMenu;
+
     public Integer getId() {
         return id;
     }
@@ -69,5 +71,12 @@ public class Menu {
 
     public void setSort(Integer sort) {
         this.sort = sort;
+    }
+    public String getParentMenu() {
+        return parentMenu;
+    }
+
+    public void setParentMenu(String parentMenu) {
+        this.parentMenu = parentMenu;
     }
 }

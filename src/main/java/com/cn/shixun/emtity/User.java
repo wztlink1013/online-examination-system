@@ -23,6 +23,16 @@ public class User {
 
     private Integer classId;
 
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
+
+    private Integer roleId;
+
     public Integer getId() {
         return id;
     }

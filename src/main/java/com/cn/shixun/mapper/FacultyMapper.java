@@ -1,7 +1,11 @@
 package com.cn.shixun.mapper;
 
 import com.cn.shixun.emtity.Faculty;
+import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
+@Mapper
 public interface FacultyMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +18,6 @@ public interface FacultyMapper {
     int updateByPrimaryKeySelective(Faculty record);
 
     int updateByPrimaryKey(Faculty record);
+
+    List<Faculty> loadFaculty();
 }

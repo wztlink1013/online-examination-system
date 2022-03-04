@@ -10,8 +10,8 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
 
     # mysql8，用以下的url和driver-class-name
-#    url: jdbc:mysql://slave3:3306/emis?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
-#    driver-class-name: com.mysql.cj.jdbc.Driver
+    #    url: jdbc:mysql://slave3:3306/emis?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    #    driver-class-name: com.mysql.cj.jdbc.Driver
     # 这里的用户名密码，不要使用之前逆向工程的那个用户名和密码（之前的用户只能查询），去使用正常的用户
     username: root
     password:

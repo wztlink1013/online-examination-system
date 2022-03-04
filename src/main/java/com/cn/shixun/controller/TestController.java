@@ -1,6 +1,6 @@
 package com.cn.shixun.controller;
 
-//import com.cn.shixun.emtity.User;
+import com.cn.shixun.emtity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,22 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping("test")
 public class TestController {
-    /**
-     * 不接收参数
-     * @return
-     */
+
     @RequestMapping("index")
     @ResponseBody // 返回一个值给浏览器
     public String index(){
-        return "index router information";
+        return "hello";
     }
 
-    /**
-     * 第一种接收参数方式
-     * @param name
-     * @param age
-     * @return
-     */
     @RequestMapping("demo")
     @ResponseBody // 返回一个值给浏览器
     public String demo(String name, Integer age){
@@ -38,10 +29,6 @@ public class TestController {
     @Autowired
     HttpServletRequest request;
 
-    /**
-     * 第二种接收参数方式
-     * @return
-     */
     @RequestMapping("demo1")
     @ResponseBody // 返回一个值给浏览器
     public String demo1(){
@@ -51,15 +38,10 @@ public class TestController {
         return name + " " + age;
     }
 
-    /**
-     * 第三种接收参数方式
-     * @param user
-     * @return
-     */
-//    @RequestMapping("demo2")
-//    @ResponseBody // 返回一个值给浏览器
-//    public String demo2(User user){
-//        System.out.println(user);
-//        return user.toString();
-//    }
+    @RequestMapping("demo2")
+    @ResponseBody // 返回一个值给浏览器
+    public String demo2(User user){
+        System.out.println(user);
+        return user.toString();
+    }
 }

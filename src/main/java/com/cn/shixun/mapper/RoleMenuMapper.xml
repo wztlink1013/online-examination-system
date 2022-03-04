@@ -5,6 +5,12 @@
     <result column="role_id" jdbcType="INTEGER" property="roleId" />
     <result column="menu_id" jdbcType="INTEGER" property="menuId" />
   </resultMap>
+
+  <delete id="deleteByRoleId" parameterType="java.lang.Integer">
+    delete from role_menu where role_id = #{id}
+
+  </delete>
+
   <insert id="insert" parameterType="com.cn.shixun.emtity.RoleMenu">
     insert into role_menu (role_id, menu_id)
     values (#{roleId,jdbcType=INTEGER}, #{menuId,jdbcType=INTEGER})

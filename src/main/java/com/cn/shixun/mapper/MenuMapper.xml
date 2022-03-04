@@ -9,10 +9,57 @@
     <result column="menu_level" jdbcType="VARCHAR" property="menuLevel" />
     <result column="parent_id" jdbcType="INTEGER" property="parentId" />
     <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="parent_menu" jdbcType="VARCHAR" property="parentMenu" />
   </resultMap>
   <sql id="Base_Column_List">
     id, menu_code, menu_name, menu_url, menu_level, parent_id, sort
   </sql>
+
+  <select id="loadPMenus" resultMap="BaseResultMap">
+    SELECT id,menu_name FROM menu WHERE menu_level = '1' ORDER BY sort
+  </select>
+
+  <select id="getMenusByRoleId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    SELECT m.id,m.menu_name,m.parent_id FROM menu m
+    LEFT JOIN role_menu rm ON rm.menu_id = m.id
+    LEFT JOIN role r ON r.id = rm.role_id
+    WHERE r.id = #{id}
+  </select>
+
+  <select id="zNodes" resultMap="BaseResultMap">
+    SELECT id,parent_id,menu_name FROM menu
+  </select>
+
+
+  <select id="list" parameterType="com.cn.shixun.common.JsGriData" resultMap="BaseResultMap">
+    SELECT
+      m.id,
+      m.menu_code,
+      m.menu_name,
+      m.menu_url,
+      m.menu_level,
+      p.menu_name parent_menu,
+      m.sort
+    FROM
+      menu m
+    LEFT JOIN menu p ON p.id = m.parent_id
+    <if test="queryParam != null">
+    WHERE m.menu_name LIKE '%${queryParam}%'
+    </if>
+    LIMIT ${offset},${pageSize}
+
+  </select>
+  <select id="count" parameterType="com.cn.shixun.common.JsGriData" resultType="java.lang.Long">
+    SELECT count(id) FROM menu
+    <if test="queryParam != null">
+      WHERE menu_name LIKE '%${queryParam}%'
+    </if>
+  </select>
+  <select id="countByParentId" parameterType="java.lang.Integer" resultType="java.lang.Long">
+    SELECT count(id) FROM menu WHERE parent_id = #{id}
+  </select>
+
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

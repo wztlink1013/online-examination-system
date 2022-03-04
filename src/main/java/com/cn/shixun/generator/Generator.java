@@ -13,7 +13,7 @@ public class Generator {
 
         List<String> warnings = new ArrayList<String>();
         boolean overwrite = true;
-        File configFile = new File("D:\\projects\\emis\\src\\main\\java\\com\\cn\\shixun\\generator\\generatorConfig.xml");
+        File configFile = new File("E:\\shanshishixun\\emis\\src\\main\\java\\com\\cn\\shixun\\generator\\generatorConfig.xml");
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = cp.parseConfiguration(configFile);
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);

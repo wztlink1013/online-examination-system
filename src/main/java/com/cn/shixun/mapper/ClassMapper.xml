@@ -79,4 +79,7 @@
       class_name = #{className,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="loadClass" parameterType="com.cn.shixun.emtity.Class" resultMap="BaseResultMap">
+    SELECT id,class_name FROM class WHERE faculty_id = #{faculty_id} AND major_id = #{major_id}
+  </select>
 </mapper>
