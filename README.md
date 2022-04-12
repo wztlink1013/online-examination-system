@@ -5,7 +5,7 @@
  * @Description:
 -->
 
-# 校内实习培训项目-在线考试系统（online-examination-system）
+# 在线考试系统（online-examination-system）
 
 ## 技术栈
 
