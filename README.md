@@ -20,3 +20,7 @@
 ## 学习记录
 
 - [校内实习 Springboot+Ajax 全栈在线考试管理系统](https://www.yuque.com/wztlink1013/blog/aeavli)
+
+## 使用
+因为大小缘故，项目需要的依赖静态文件并未跟随代码一同上传，所以项目运行需要下载`plugins`文件夹在`/src/main/resources/static/`路径中
+> plugings文件夹下载地址：https://github.com/wztlink1013/online-examination-system/discussions/2
